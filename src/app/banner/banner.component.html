@@ -1,0 +1,139 @@
+
+<mat-toolbar color="primary">  
+    <mat-toolbar-row fxLayoutAlign="space-between center">
+        <div fxLayout="row">
+            <button mat-button>
+            <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="get()">home</mat-icon>
+     <span>Technical</span></button>
+     <div *ngIf=!currdevice>
+     <button mat-button><a routerLink="home">Home</a></button>
+     <button mat-button><a routerLink="cars">Cars</a></button>
+     <button mat-button>Models</button>
+    </div>
+    </div>
+
+     <div>
+     <button mat-button *ngIf=!currdevice>Menu</button>
+     <button mat-icon-button  *ngIf=currdevice aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+    </div>
+   
+    </mat-toolbar-row>
+      
+<mat-toolbar-row *ngIf=currdevice fxLayoutAlign="space-between">
+      
+                <button mat-button><a routerLink="home">Home</a></button>
+                <button mat-button><a routerLink="cars">Cars</a></button>
+                <button mat-button>Models</button>
+              
+</mat-toolbar-row>
+  </mat-toolbar>
+
+  <!-- <div fxLayout="row" style="background: grey;">
+<div fxFlex="20" style="background: blue;">
+hello
+</div> -->
+
+<main style="width:98%;margin:auto;">
+     <div fxLayout="row" >
+<mat-card >
+        <div fxLayout="row"  fxLayout.lt-md="column">
+        <div fxFlex="50" >
+
+        <mat-card-title>Welcome</mat-card-title>
+        <mat-card-content style="width:95%">
+                Bacon ipsum dolor amet corned beef biltong short loin frankfurter. Shoulder bresaola tongue chuck, boudin buffalo meatloaf andouille chicken picanha alcatra cow fatback t-bone prosciutto. Biltong meatloaf shank, beef boudin brisket prosciutto andouille burgdoggen turducken. Jerky alcatra porchetta swine prosciutto, andouille shank pig beef ribs burgdoggen capicola. Pork swine frankfurter, rump ham hock beef ribs ham ball tip jerky turkey ground round prosciutto.
+Shankle spare ribs brisket jerky, beef ribs bacon kielbasa. Cow ground round pig landjaeger, chicken chuck capicola strip steak turkey swine porchetta. Swine burgdoggen meatball capicola ham, pork belly pancetta kielbasa fatback pastrami. Ham tongue flank, drumstick pastrami pork loin ground round. Doner tongue tenderloin, corned beef cupim pork frankfurter short loin chuck salami meatball.
+        </mat-card-content>
+    </div>
+
+
+
+
+<div fxFlex="50">
+        
+
+    <img  mat-card-image src="/assets/multimodal.jpg" class="bannerimg">
+</div>
+
+
+</div>
+</mat-card>
+</div>
+
+<br>
+<!-- <div fxLayout="row">
+        <div>
+    <mat-card fxFlex="50" >
+        <mat-card-title>
+    Card nr
+    </mat-card-title>
+    <img  mat-card-image src="/assets/multimodal.jpg" alt="image">
+    <mat-card-content>
+            'Bacon ipsum dolor amet corned beef biltong short loin frankfurter. Shoulder bresaola tongue chuck, boudin buffalo meatloaf andouille chicken picanha alcatra cow fatback t-bone prosciutto. Biltong meatloaf shank, beef boudin brisket prosciutto andouille burgdoggen turducken. Jerky alcatra porchetta swine prosciutto, andouille shank pig beef ribs burgdoggen capicola. Pork swine frankfurter, rump ham hock beef ribs ham ball tip jerky turkey ground round prosciutto.'
+
+    </mat-card-content>
+    
+    </mat-card>
+    <mat-card fxFlex="50" >
+            <mat-card-title>
+        Card nr
+        </mat-card-title>
+        <img  mat-card-image src="/assets/multimodal.jpg" alt="image">
+        <mat-card-content>
+                'Bacon ipsum dolor amet corned beef biltong short loin frankfurter. Shoulder bresaola tongue chuck, boudin buffalo meatloaf andouille chicken picanha alcatra cow fatback t-bone prosciutto. Biltong meatloaf shank, beef boudin brisket prosciutto andouille burgdoggen turducken. Jerky alcatra porchetta swine prosciutto, andouille shank pig beef ribs burgdoggen capicola. Pork swine frankfurter, rump ham hock beef ribs ham ball tip jerky turkey ground round prosciutto.'
+    
+        </mat-card-content>
+        
+        </mat-card>
+    </div>
+    </div> -->
+ <div fxLayout="row wrap" fxLayoutAlign="space-between stretch">
+   
+  
+<mat-card  *ngFor="let c of collection let i=index"  fxFlex="32" fxFlex.md="50" fxFlex.sm="100" fxFlex.xs="100">
+    
+    <mat-card-title>{{i+1}}
+Card nr.{{c.cardno}}
+</mat-card-title>
+
+<img  mat-card-image [src]="c.imgurl" alt="image"  style="object-fit: cover;height:400px">
+
+<mat-card-content>
+{{c.notes}}
+</mat-card-content>
+<mat-card-actions fxLayoutAlign="space-around center">
+    <div fxLayoutAlign="space-around end">
+   <button mat-button style="padding-top:10px"><mat-icon aria-hidden="false" aria-label="Example home icon">thumb_up</mat-icon>LIKE</button> 
+</div>
+ <button mat-button><mat-icon aria-hidden="false" aria-label="Example home icon">share</mat-icon>SHARE</button>
+        <button mat-button><mat-icon aria-hidden="false" aria-label="Example home icon">forward</mat-icon>More info</button>
+      </mat-card-actions>
+</mat-card>
+
+  
+</div>
+</main>
+    
+<!-- <div fxLayout="row" style="background: lightblue;" >
+        <div>
+    <mat-card>
+            <div fxFlex="50">
+            <mat-card-title>Welcome</mat-card-title>
+        <mat-card-content>
+                Bacon ipsum dolor amet corned beef biltong short loin frankfurter. Shoulder bresaola tongue chuck, boudin buffalo meatloaf andouille chicken picanha alcatra cow fatback t-bone prosciutto. Biltong meatloaf shank, beef boudin brisket prosciutto andouille burgdoggen turducken. Jerky alcatra porchetta swine prosciutto, andouille shank pig beef ribs burgdoggen capicola. Pork swine frankfurter, rump ham hock beef ribs ham ball tip jerky turkey ground round prosciutto.
+Shankle spare ribs brisket jerky, beef ribs bacon kielbasa. Cow ground round pig landjaeger, chicken chuck capicola strip steak turkey swine porchetta. Swine burgdoggen meatball capicola ham, pork belly pancetta kielbasa fatback pastrami. Ham tongue flank, drumstick pastrami pork loin ground round. Doner tongue tenderloin, corned beef cupim pork frankfurter short loin chuck salami meatball.
+        </mat-card-content>
+    </div>
+       
+       <img  mat-card-image src="/assets/multimodal.jpg">
+       <img  mat-card-image src="/assets/Pipeline.jpg" width="20%">
+       <img  mat-card-image src="/assets/multimodal.jpg" width="20%">
+       <img  mat-card-image src="/assets/Pipeline.jpg" width="20%"> 
+    </mat-card>
+       </div>
+
+   
+</div> -->
+       

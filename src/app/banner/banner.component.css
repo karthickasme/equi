@@ -1,0 +1,10 @@
+img.bannerimg {
+    margin-top: 30px;
+ 
+    width:104%;
+}
+/* mat-card img{
+    object-fit: cover; /*this makes the image in src fit to the size specified below
+    width: 100%;
+    height: 100%;
+  } */
